@@ -15,19 +15,21 @@ const compileTemplate = async () => {
 };
 
 // generate static pages using data and template
-const generatePages = async () => {
-  const data = await fetchData();
+const generatePages = async (numPages) => {
   const template = await compileTemplate();
-  const html = template({
-    activity: data.activity,
-    type: data.type,
-    participants: data.participants,
-    price: data.price,
-    link: data.link,
-    key: data.key,
-    accessibility: data.accessibility,
-  });
-  fs.writeFileSync(`page.html`, html);
+  for (let i = 1; i <= numPages; i++) {
+    const data = await fetchData();
+    const html = template({
+      activity: data.activity,
+      type: data.type,
+      participants: data.participants,
+      price: data.price,
+      link: data.link,
+      key: data.key,
+      accessibility: data.accessibility,
+    });
+    fs.writeFileSync(`pages/page${i}.html`, html);
+  }
 };
 
-generatePages();
+generatePages(10);
