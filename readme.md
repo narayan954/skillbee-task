@@ -1,4 +1,5 @@
-Bored API Activity Generator
+# Bored API Activity Generator
+
 This is a simple web application that generates a random activity using the Bored API. The application is built using Node.js and Handlebars, and can be used to generate any number of static HTML pages.
 
 Getting Started
