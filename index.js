@@ -23,6 +23,9 @@ const generatePages = async () => {
     type: data.type,
     participants: data.participants,
     price: data.price,
+    link: data.link,
+    key: data.key,
+    accessibility: data.accessibility,
   });
   fs.writeFileSync(`page.html`, html);
 };
